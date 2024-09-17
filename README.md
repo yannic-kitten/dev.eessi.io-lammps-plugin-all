@@ -1,2 +1,2 @@
 # dev.eessi.io
-Scripts &amp; tools for dev.eessi.io repository
+Inputs for builds for dev.eessi.io repository 
