@@ -1,4 +1,4 @@
 easyconfigs:
-  - ESPResSo-4.2.2-foss-2023a-software-commit.eb
+  - GROMACS-2024.1-foss-2023b-software-commit.eb:
       options:
         software-commit: 1e00b953415828ab858321a090ace20c32152b69 # release 2024.1

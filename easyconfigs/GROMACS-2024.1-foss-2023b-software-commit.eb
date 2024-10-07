@@ -36,6 +36,7 @@ toolchainopts = {'openmp': True, 'usempi': True}
 github_account = 'gromacs'
 source_urls = ['https://github.com/%(github_account)s/%(name)s/archive/']
 
+
 sources = ['%(software_commit)s.tar.gz']
 
 patches = [
@@ -43,6 +44,7 @@ patches = [
     'GROMACS-2023.1_fix_tests_for_gmx_thread_mpi.patch',
     'GROMACS-2024.1_fix-tests-filesystem-race.patch',
 ]
+
 checksums = [
     {'GROMACS-2023.1_set_omp_num_threads_env_for_ntomp_tests.patch':
      '7f41bda16c9c2837624265dda4be252f655d1288ddc4486b1a2422af30d5d199'},
