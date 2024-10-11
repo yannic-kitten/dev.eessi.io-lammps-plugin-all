@@ -76,12 +76,10 @@ exts_default_options = {
 }
 
 exts_list = [
-    ('gmxapi', '0.5.0', {
+    ('gmxapi', '0.4.2', {
         'preinstallopts': 'export CMAKE_ARGS="-Dgmxapi_ROOT=%(installdir)s ' +
                           '-C %(installdir)s/share/cmake/gromacs_mpi/gromacs-hints_mpi.cmake" && ',
-        'source_tmpl': 'gromacs-2024.1.tar.gz',
-        'start_dir': 'python_packaging/gmxapi',
-        'checksums': ['937d8f12a36fffbf2af7add71adbb5aa5c5537892d46c9a76afbecab1aa0aac7'],
+        'checksums': ['c746c6498c73a75913d7fcb01c13cc001d4bcb82999e9bf91d63578565ed1a1f'],
     }),
 ]
 
