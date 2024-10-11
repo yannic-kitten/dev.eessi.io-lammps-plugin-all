@@ -1,4 +1,4 @@
 easyconfigs:
-  - GROMACS-2024.1-foss-2023b-software-commit.eb:
+  - GROMACS-2024.3-foss-2023b-software-commit.eb:
       options:
         software-commit: d0f934abfd1394621c40858a2c2dd9123451df4e # release 2024.3
