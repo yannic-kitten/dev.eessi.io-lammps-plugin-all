@@ -15,7 +15,7 @@
 # License::   MIT/GPL
 
 name = 'GROMACS'
-version = '2024.1'
+version = '2024.3'
 versionsuffix = '-%(software_commit)s'
 
 homepage = 'https://www.gromacs.org'
