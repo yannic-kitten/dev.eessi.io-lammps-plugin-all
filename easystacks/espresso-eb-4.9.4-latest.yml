@@ -1,0 +1,4 @@
+easyconfigs:
+  - ESPResSo-4.2.2-foss-2023a-software-commit.eb:
+      options:
+        software-commit: 1f672a00e22a9bc5fec1f7070bd28ff7718a706e # Latest 20241101
