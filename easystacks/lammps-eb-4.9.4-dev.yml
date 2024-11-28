@@ -7,3 +7,4 @@ easyconfigs:
       options:
         software-commit: 0cb72423b8ed2fdf138831c145a3bfb6ea42394e # release stable_2Aug2023
         include-easyblocks-from-commit: 3d295a926318468e3e8fdd99fdcfea02cd796403
+        hooks: LAMMPS_eb_hooks.py
