@@ -41,6 +41,7 @@ def pre_configure_hook(self, *args, **kwargs):
     - set kokkos_arch on x86_64/amd/zen4
     """
 
+    print_msg("Using custom hook for %s %s", self.name, self.version)
     cpu_target = get_eessi_envvar('EESSI_SOFTWARE_SUBDIR')
     if self.name == 'LAMMPS':
         if self.version in ('2Aug2023_update4'):
