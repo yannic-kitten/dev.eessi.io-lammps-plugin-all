@@ -7,3 +7,37 @@ This is an example repository for the setup of the build and ingestion process f
 ## Installation instructions for new project repositories
 
 This section details the steps needed to setup the infrastructure for a new project's repository and bot.
+
+Setting up an instance of the bot for a dev.eessi.io project mostly consists of following the instructions detailed at the bot's [development repository](https://github.com/EESSI/eessi-bot-software-layer). There are however a few details and differences:
+
+### app.cfg
+The bot's `app.cfg` file needs to be adjusted to the cluster it is running on. Besides the obvious (app ID that points to the correct GitHub App, private key specific to this bot, etc,), these are:
+``` ini
+[buildenv]
+build_job_script = bot/bot-build-dev.eessi.io.slurm@git@github.com:EESSI/dev.eessi.io-scripts.git
+```
+(This also requires an additional key pair, see details later!)
+
+``` ini
+[deploycfg]
+...
+bucket_name = { "dev.eessi.io": "dev.eessi.io-2024.09" }
+```
+
+For the currently available architectures in the dev.eessi.io cluster:
+``` ini
+[repo_targets]
+# defines for which repository a arch_target should be build for
+repo_target_map = {
+    "linux/x86_64/amd/zen2" : ["dev.eessi.io"],
+    "linux/x86_64/amd/zen4" : ["dev.eessi.io"],
+    "linux/aarch64/neoverse_n1" : ["dev.eessi.io"] }
+```
+
+### repos.cfg
+The `repos.cfg` file needs to be configured for `dev.eessi.io`. All that needs to be changed is a section named `[dev.eessi.io]` with `repo_name=dev.eessi.io`. All other settings can remain the same as the production bot.
+
+### Build script key pair
+The `dev.eessi.io` bot uses a different script to start build jobs. This script is at https://github.com/EESSI/dev.eessi.io-scripts and is obtained through git from that repository (the repository and the script can be changed via the `[buildenv]` section in `app.cfg`). To do so, a key pair with at least read access is required in the GitHub account that owns the bot instance (most likely this will be https://github.com/EESSIbot). If setting up a new instance, a new pubkey should be [given to that GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) (currently can be done by @boegel and @bedroge), while the corresponding private key should be in `$HOME/.ssh` of the `bot` account in the build cluster.
+
+### S3 bucket
