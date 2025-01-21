@@ -23,6 +23,8 @@ build_job_script = bot/bot-build-dev.eessi.io.slurm@git@github.com:EESSI/dev.ees
 ...
 bucket_name = { "dev.eessi.io": "dev.eessi.io-2024.09" }
 ```
+If you are deploying the tarballs to an AWS S3 bucket, keep in mind you will need to install the necessary tooling and set it up following the instructions in the bot's [documentation](https://github.com/EESSI/eessi-bot-software-layer?tab=readme-ov-file#step-41-installing-tools-to-access-s3-bucket). You will also need the associated key pair for the bucket in question.
+
 
 For the currently available architectures in the dev.eessi.io cluster:
 ``` ini
