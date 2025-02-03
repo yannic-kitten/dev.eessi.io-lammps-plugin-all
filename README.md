@@ -37,7 +37,7 @@ repo_target_map = {
 ```
 
 ### repos.cfg
-The `repos.cfg` file needs to be configured for `dev.eessi.io`. All that needs to be changed is a section named `[dev.eessi.io]` with `repo_name=dev.eessi.io`. All other settings can remain the same as the production bot.
+The `repos.cfg` file needs to be configured for `dev.eessi.io`. All that needs to be changed is a section named `[dev.eessi.io]` with `repo_name=dev.eessi.io`. All other settings can remain the same as the production bot. You can find more detailed information about `repos.cfg` in the relevant section of the bot's [documentation](https://github.com/EESSI/eessi-bot-software-layer/blob/develop/README.md#repo_targets-section).
 
 ### Build script key pair
 The `dev.eessi.io` bot uses a different script to start build jobs. This script is at https://github.com/EESSI/dev.eessi.io-scripts and is obtained through git from that repository (the repository and the script can be changed via the `[buildenv]` section in `app.cfg`). To do so, a key pair with at least read access is required in the GitHub account that owns the bot instance (most likely this will be https://github.com/EESSIbot). If setting up a new instance, a new pubkey should be [given to that GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) (currently can be done by @boegel and @bedroge), while the corresponding private key should be in `$HOME/.ssh` of the `bot` account in the build cluster.
