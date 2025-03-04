@@ -1,8 +1,8 @@
 easyconfigs:
-  - gh-2.67.0-software-commit.eb:
-      options:
-        software-commit: e516e5ed5db056653dbb1dd141e4c714555a5967 # two commits after  2.67.0
   - Go-1.23.6.eb:
       options:
         # see https://github.com/easybuilders/easybuild-easyconfigs/pull/22424
         from-commit: 8bd1967dcebdb9100643ea5b8b2974463a50a22d # Included recently added Go
+  - gh-2.67.0-software-commit.eb:
+      options:
+        software-commit: e516e5ed5db056653dbb1dd141e4c714555a5967 # two commits after  2.67.0
