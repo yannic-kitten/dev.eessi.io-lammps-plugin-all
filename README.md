@@ -1,4 +1,6 @@
-# `dev.eessi.io` Example Project
+# `dev.eessi.io-lammps-plugin all`
+
+# `dev.eessi.io`
 
 This is an example repository for the setup of the build and ingestion process for EESSI's `dev.eessi.io` CernVM-FS repository. This project is currently primarily intended for the [MultiXscale CoE](https://multixscale.eu) partners working on the development of the project's core applications.
 
