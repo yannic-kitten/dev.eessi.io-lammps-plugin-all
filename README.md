@@ -1,4 +1,4 @@
-# `dev.eessi.io-lammps-plugin all`
+# `dev.eessi.io-lammps-plugin-all`
 
 # `dev.eessi.io`
 
