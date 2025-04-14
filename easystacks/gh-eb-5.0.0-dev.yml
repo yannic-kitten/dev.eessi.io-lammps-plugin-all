@@ -1,4 +1,5 @@
 easyconfigs:
+  - Go-1.23.6.eb
   - gh-2.67.0-software-commit.eb:
       options:
         software-commit: e516e5ed5db056653dbb1dd141e4c714555a5967 # two commits after  2.67.0
