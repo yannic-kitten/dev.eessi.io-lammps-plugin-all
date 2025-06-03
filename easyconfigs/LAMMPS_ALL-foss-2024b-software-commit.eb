@@ -1,6 +1,6 @@
 name = 'LAMMPS'
 version = '%(software_commit)s'
-versionsuffix = '-kokkos-dev_OBMD'
+versionsuffix = '-dev_ALL'
 
 homepage = 'https://www.lammps.org'
 description = """LAMMPS is a classical molecular dynamics code, and an acronym
@@ -14,15 +14,15 @@ simulation domain. The code is designed to be easy to modify or extend with new
 functionality.
 """
 
-toolchain = {'name': 'foss', 'version': '2023a'}
+toolchain = {'name': 'foss', 'version': '2024b'}
 toolchainopts = {'openmp': True, 'usempi': True}
 
 # 'https://github.com/lammps/lammps/archive/'
 source_urls = [GITHUB_LOWER_SOURCE]
 sources = ['%(version)s.tar.gz']
 patches = [
-    'LAMMPS-2Aug2023_install_lammps_python_package_in_eb_software_module.patch',
-    'LAMMPS-2Aug2023_lammps_obmd_package.patch',
+    'LAMMPS-29Aug2024_install_lammps_python_package_in_eb_software_module.patch',
+    'LAMMPS-29Aug2024_lammps_all_package.patch',
 ]
 checksums = [
 ]
@@ -36,19 +36,18 @@ dependencies = [
     ('Python', '3.11.3'),
     ('libpng', '1.6.39'),
     ('libjpeg-turbo', '2.1.5.1'),
-    ('netCDF', '4.9.2'),
+    #('netCDF', '4.9.2'),
     ('GSL', '2.7'),
     ('zlib', '1.2.13'),
     ('gzip', '1.12'),
     ('cURL', '8.0.1'),
-    ('HDF5', '1.14.0'),
+    #('HDF5', '1.14.0'),
     ('PCRE', '8.45'),
     ('libxml2', '2.11.4'),
     ('FFmpeg', '6.0'),
-    ('Voro++', '0.4.6'),
-    ('kim-api', '2.3.0'),
+    #('Voro++', '0.4.6'),
+    #('kim-api', '2.3.0'),
     ('Eigen', '3.4.0'),
-    ('PLUMED', '2.9.0'),
     ('SciPy-bundle', '2023.07'),
     # VTK package is auto-disabled if this dep is not available
     ('VTK', '9.3.0'),
@@ -59,7 +58,7 @@ if ARCH == 'x86_64':
     # TBB and ScaFaCos are an optional dependency when building on Intel arch
     dependencies += [
         ('tbb', '2021.11.0'),
-        ('ScaFaCoS', '1.0.4'),
+        #('ScaFaCoS', '1.0.4'),
     ]
 
 # To use additional custom configuration options, use the 'configopts' easyconfig parameter
@@ -81,7 +80,8 @@ if ARCH == 'x86_64':
 general_packages = [
     'DPD-BASIC',
     'MOLECULE',
-    'OBMD'
+    'GRANULAR',
+    'ALLPKG'
 ]
 
 # Excluded packages due to requiring additional (non-trivial) deps
